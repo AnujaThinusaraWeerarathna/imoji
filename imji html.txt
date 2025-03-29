@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Emojis and Avatars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover {
+            transform: scale(1.1);
+        }
+
+        .emoji {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click on the Emoji to Download!</h1>
+
+    <div class="container">
+        <!-- Emoji Examples -->
+        <div class="item" onclick="downloadFile('😀')">
+            <div class="emoji">😀</div>
+        </div>
+        <div class="item" onclick="downloadFile('😁')">
+            <div class="emoji">😁</div>
+        </div>
+        <div class="item" onclick="downloadFile('😂')">
+            <div class="emoji">😂</div>
+        </div>
+        <div class="item" onclick="downloadFile('🤣')">
+            <div class="emoji">🤣</div>
+        </div>
+        <div class="item" onclick="downloadFile('😃')">
+            <div class="emoji">😃</div>
+        </div>
+        <div class="item" onclick="downloadFile('😄')">
+            <div class="emoji">😄</div>
+        </div>
+        <div class="item" onclick="downloadFile('😅')">
+            <div class="emoji">😅</div>
+        </div>
+        <div class="item" onclick="downloadFile('😆')">
+            <div class="emoji">😆</div>
+        </div>
+        <div class="item" onclick="downloadFile('😇')">
+            <div class="emoji">😇</div>
+        </div>
+        <div class="item" onclick="downloadFile('😉')">
+            <div class="emoji">😉</div>
+        </div>
+        <div class="item" onclick="downloadFile('😊')">
+            <div class="emoji">😊</div>
+        </div>
+        <div class="item" onclick="downloadFile('😋')">
+            <div class="emoji">😋</div>
+        </div>
+        <div class="item" onclick="downloadFile('😎')">
+            <div class="emoji">😎</div>
+        </div>
+        <div class="item" onclick="downloadFile('😍')">
+            <div class="emoji">😍</div>
+        </div>
+        <div class="item" onclick="downloadFile('🥰')">
+            <div class="emoji">🥰</div>
+        </div>
+        <div class="item" onclick="downloadFile('😘')">
+            <div class="emoji">😘</div>
+        </div>
+        <div class="item" onclick="downloadFile('😗')">
+            <div class="emoji">😗</div>
+        </div>
+        <div class="item" onclick="downloadFile('😙')">
+            <div class="emoji">😙</div>
+        </div>
+        <div class="item" onclick="downloadFile('😚')">
+            <div class="emoji">😚</div>
+        </div>
+    </div>
+
+    <script>
+        function downloadFile(fileName) {
+            // For emojis, create a downloadable text file
+            const blob = new Blob([fileName], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'emoji.txt'; // Specify the file name for the emoji text
+            a.click();
+        }
+    </script>
+</body>
+</html>
